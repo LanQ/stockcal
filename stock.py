@@ -30,7 +30,7 @@ def index():
 		
 		for code in code_list:
 			try:
-				record = ts.get_k_data(code, ktype='W')
+				record = ts.get_k_data(code, ktype='W', start='2015-05-01')
 								
 				record_decr = record.describe()
 				record_decr_filter = record_decr.loc[['mean', 'min', 'max', 'low']]
@@ -51,6 +51,9 @@ def index():
 				'high_max',\
 				'high_min',\
 				'low_min'])
+				
+				record_custom['close_low_mean_pct'] = (record_custom['close']-record_custom['low_mean']) / record_custom['low_mean']
+				
 				
 				#if no NAN value in dataframe
 				if (record_custom.isnull().values.any() == False):
