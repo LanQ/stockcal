@@ -66,3 +66,6 @@ def index():
 		##app.logger.info(record_decr_filter)
 		result = records.to_html()
 	return render_template('stock_data.html', code=code_list, form=form, result=result)
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', debug=True)
