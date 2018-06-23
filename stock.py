@@ -31,7 +31,7 @@ def index():
 		
 		for code in code_list:
 			try:
-				record = ts.get_k_data(code, ktype='W', start='2015-05-01')
+				record = ts.get_k_data(code, ktype='W', start='2016-01-01')
 								
 				record_decr = record.describe()
 				record_decr_filter = record_decr.loc[['mean', 'min', 'max', 'low']]
