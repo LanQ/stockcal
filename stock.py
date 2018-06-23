@@ -12,7 +12,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 
 class MyForm(FlaskForm):
-    code = StringField(u'代码', validators=[DataRequired()])
+    code = StringField(u'代码', default='600109', validators=[DataRequired()])
+    start_date = StringField(u'起始日期', default='2016-01-01', validators=[DataRequired()]) 
     submit = SubmitField(u'提交')
 
 @app.route('/', methods=['GET', 'POST'])

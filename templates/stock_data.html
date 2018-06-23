@@ -3,6 +3,7 @@
 <form method="POST" action="/">
     {{ form.csrf_token }}
     {{ form.code.label }} {{ form.code(size=20) }}
+    {{ form.start_date.label }}{{ form.start_date }}
     {{ form.submit()}}
 </form>
 
